@@ -8,335 +8,25 @@
 import UIKit
 
 struct Animal {
-    let especie: String
-    let nome: String
-    let raca: String
-    let sexo: String
-    let nascimento: String
+    let species: String
+    let name: String
+    let breed: String
+    let gender: String
+    let birth: String
+    let color: String
+    let weight: String
+    let moreInfo: String
 }
 
 class InfoView: UIScrollView {
     
+    // MARK: variáveis e constantes
     let contentView = UIView()
-    let information = Animal(especie: "Canina", nome: "Nico", raca: "Pinscher", sexo: "Macho", nascimento: "12/12/2014")
+    let imgViewBackground = UIImageView()
     
-    let imgv = UIImageView()
+    let information = Animal(species: "Canina", name: "Nico", breed: "Pinscher", gender: "Macho", birth: "12/12/2014",color: "Marrom",weight: "3,8", moreInfo: "pi pi pi po po po bla bla bla coisa linda da mãe. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .yellow
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupConstraints(with myview: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        centerXAnchor.constraint(equalTo: myview.centerXAnchor).isActive = true
-        widthAnchor.constraint(equalTo: myview.widthAnchor).isActive = true
-        topAnchor.constraint(equalTo: myview.topAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: myview.bottomAnchor).isActive = true
-        
-        
-        addSubview(contentView)
-        contentView.backgroundColor = .blue
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-        setupImgs()
-    }
-    
-    func setupImgs(){
-        contentView.layoutIfNeeded()
-        let imgBackground = UIImage(named: "backgroundPatinhas")!
-        imgv.image = imgBackground
-        
-        contentView.addSubview(imgv)
-        imgv.translatesAutoresizingMaskIntoConstraints = false
-        imgv.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        imgv.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        
-        
-        
-        let imgPet = UIImage(systemName: "square.fill")!
-        let imgvPet = UIImageView(image: imgPet)
-        
-        //imgv.center = center
-        contentView.addSubview(imgvPet)
-        let widthBackground = imgv.frame.width / 1.5
-        imgvPet.translatesAutoresizingMaskIntoConstraints = false
-        imgvPet.widthAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.heightAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.centerXAnchor.constraint(equalTo: imgv.centerXAnchor).isActive = true
-        imgvPet.centerYAnchor.constraint(equalTo: imgv.centerYAnchor).isActive = true
-        
-        setupLabels()
-    }
-    
-    func setupLabels(){
-        contentView.layoutIfNeeded()
-        let lblEspecie = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-        let lblNome = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-        let lblRaca = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-        let lblSexo = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-        let lblNascimento = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-        
-        contentView.addSubview(lblEspecie)
-        contentView.addSubview(lblNome)
-        contentView.addSubview(lblRaca)
-        contentView.addSubview(lblSexo)
-        contentView.addSubview(lblNascimento)
-        
-        var constant = imgv.frame.height + 20
-        
-        lblEspecie.setupConstraints2(marginsView: contentView.layoutMarginsGuide, constant: constant)
-        constant += lblEspecie.frame.height + 40
-        lblNome.setupConstraints2(marginsView: contentView.layoutMarginsGuide, constant: constant)
-        constant += lblEspecie.frame.height + 40
-        lblRaca.setupConstraints2(marginsView: contentView.layoutMarginsGuide, constant: constant)
-        constant += lblEspecie.frame.height + 40
-        lblSexo.setupConstraints2(marginsView: contentView.layoutMarginsGuide, constant: constant)
-        constant += lblEspecie.frame.height + 40
-        lblNascimento.setupConstraints2(marginsView: contentView.layoutMarginsGuide, constant: constant)
-        lblNascimento.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-    }
-    
-    
-//    func addLabels(){
-//        let label = CustomLabel(text: "Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas.Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas.Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas.Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas.Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas.Eu me desafiei na criação desse projeto de paixão, e, ironicamente, ele se tornou real em meio ao caos da vida adulta, no meio de uma pandemia. Foi uma oportunidade de colocar em prática e visualizar aquilo que eu sempre tive um intenso interesse, e assistir ele aos poucos tomar forma da ponta dos meus dedos enquanto a vida acontecia com a mesma intensidade. Mas, se tem uma coisa que eu aprendi com a teoria do caos, é que o caos nem sempre é ruim. O caos é fascinante. Nesta experiência, você pode ver os padrões 2D criados por 4 atratores estranhos: Lorenz, Aizawa, Thomas e Chua. Você pode observar qualquer um dos sistemas evoluindo em seu próprio comportamento caótico, dançando em torno do atrator, e como a computação e a matemática juntas podem ser poderosas e belas", fontSize: 16)
-//        contentView.addSubview(label)
-//
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-//        label.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-//        label.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-//        label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-//    }
-    
-}
-    
-    
-    
-    
-//
-//    func setupLabels(){
-//        // Espécie
-//        // Nome
-//        // Raça
-//        // Sexo
-//        // Data de nascimento
-//
-//        let lblEspecie = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie)
-//        contentView.addSubview(lblNome)
-//        contentView.addSubview(lblRaca)
-//        contentView.addSubview(lblSexo)
-//        contentView.addSubview(lblNascimento)
-//
-//        lblEspecie.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: imgv.layoutMarginsGuide)
-//        lblNome.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie.layoutMarginsGuide)
-//        lblRaca.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome.layoutMarginsGuide)
-//        lblSexo.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca.layoutMarginsGuide)
-//        lblNascimento.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo.layoutMarginsGuide)
-//
-//
-//        let lblEspecie2 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome2 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca2 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo2 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento2 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie2)
-//        contentView.addSubview(lblNome2)
-//        contentView.addSubview(lblRaca2)
-//        contentView.addSubview(lblSexo2)
-//        contentView.addSubview(lblNascimento2)
-//
-//        lblEspecie2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNascimento.layoutMarginsGuide)
-//        lblNome2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie2.layoutMarginsGuide)
-//        lblRaca2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome2.layoutMarginsGuide)
-//        lblSexo2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca2.layoutMarginsGuide)
-//        lblNascimento2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo2.layoutMarginsGuide)
-//
-//        let lblEspecie3 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome3 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca3 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo3 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento3 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie3)
-//        contentView.addSubview(lblNome3)
-//        contentView.addSubview(lblRaca3)
-//        contentView.addSubview(lblSexo3)
-//        contentView.addSubview(lblNascimento3)
-//
-//        lblEspecie3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNascimento2.layoutMarginsGuide)
-//        lblNome3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie3.layoutMarginsGuide)
-//        lblRaca3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome3.layoutMarginsGuide)
-//        lblSexo3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca3.layoutMarginsGuide)
-//        lblNascimento3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo3.layoutMarginsGuide)
-//    }
-//
-//
-//
-//}
-
-/*
-
-
-class InfoView3: UIScrollView {
-    
-    let contentView = UIView()
-    let information = Animal(especie: "Canina", nome: "Nico", raca: "Pinscher", sexo: "Macho", nascimento: "12/12/2014")
-    
-    let imgv = UIImageView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .red
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupScreen(){
-        addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.backgroundColor = .yellow
-        
-        contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        
-        contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        contentView.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
-        contentView.heightAnchor.constraint(equalTo: heightAnchor).priority = .defaultLow
-        
-        setupImgs()
-//        setupLabels()
-        
-        
-    }
-    
-    
-    func setupImgs(){
-        let imgBackground = UIImage(named: "backgroundPatinhas")!
-        imgv.image = imgBackground
-        
-        contentView.addSubview(imgv)
-        imgv.translatesAutoresizingMaskIntoConstraints = false
-        imgv.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        imgv.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        
-        
-        let imgPet = UIImage(systemName: "square.fill")!
-        let imgvPet = UIImageView(image: imgPet)
-        
-        //imgv.center = center
-        contentView.addSubview(imgvPet)
-        let widthBackground = imgv.frame.width / 1.5
-        imgvPet.translatesAutoresizingMaskIntoConstraints = false
-        imgvPet.widthAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.heightAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.centerXAnchor.constraint(equalTo: imgv.centerXAnchor).isActive = true
-        imgvPet.centerYAnchor.constraint(equalTo: imgv.centerYAnchor).isActive = true
-        
-    }
-    
-    
-    
-//
-//    func setupLabels(){
-//        // Espécie
-//        // Nome
-//        // Raça
-//        // Sexo
-//        // Data de nascimento
-//
-//        let lblEspecie = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie)
-//        contentView.addSubview(lblNome)
-//        contentView.addSubview(lblRaca)
-//        contentView.addSubview(lblSexo)
-//        contentView.addSubview(lblNascimento)
-//
-//        lblEspecie.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: imgv.layoutMarginsGuide)
-//        lblNome.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie.layoutMarginsGuide)
-//        lblRaca.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome.layoutMarginsGuide)
-//        lblSexo.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca.layoutMarginsGuide)
-//        lblNascimento.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo.layoutMarginsGuide)
-//
-//
-//        let lblEspecie2 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome2 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca2 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo2 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento2 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie2)
-//        contentView.addSubview(lblNome2)
-//        contentView.addSubview(lblRaca2)
-//        contentView.addSubview(lblSexo2)
-//        contentView.addSubview(lblNascimento2)
-//
-//        lblEspecie2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNascimento.layoutMarginsGuide)
-//        lblNome2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie2.layoutMarginsGuide)
-//        lblRaca2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome2.layoutMarginsGuide)
-//        lblSexo2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca2.layoutMarginsGuide)
-//        lblNascimento2.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo2.layoutMarginsGuide)
-//
-//        let lblEspecie3 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-//        let lblNome3 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-//        let lblRaca3 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-//        let lblSexo3 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-//        let lblNascimento3 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
-//
-//        contentView.addSubview(lblEspecie3)
-//        contentView.addSubview(lblNome3)
-//        contentView.addSubview(lblRaca3)
-//        contentView.addSubview(lblSexo3)
-//        contentView.addSubview(lblNascimento3)
-//
-//        lblEspecie3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNascimento2.layoutMarginsGuide)
-//        lblNome3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblEspecie3.layoutMarginsGuide)
-//        lblRaca3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblNome3.layoutMarginsGuide)
-//        lblSexo3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblRaca3.layoutMarginsGuide)
-//        lblNascimento3.setupConstraints(marginsView: contentView.layoutMarginsGuide, lastItem: lblSexo3.layoutMarginsGuide)
-//    }
-
-    
-   
-}
-
-
-
-
-class InfoView2: UIScrollView {
-    
-    let information = Animal(especie: "Canina", nome: "Nico", raca: "Pinscher", sexo: "Macho", nascimento: "12/12/2014")
-    
-    //let cl = CustomLabel(text: "Hey", fontSize: 14)
-    
-    let contentView = UIView(frame: .zero)
-    let imgv = UIImageView()
-    
-    
+    // MARK: init
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -346,108 +36,112 @@ class InfoView2: UIScrollView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupScreen() {
+    // MARK: setupScreen
+    func setupScreen(view: UIView) {
+        setupConstraints(with: view)
+        setupImages()
+        addLabels()
+    }
+    
+    // MARK: setupConstraints
+    // Faz as constraaints da scrollview e da contentView
+    private func setupConstraints(with myview: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        centerXAnchor.constraint(equalTo: myview.centerXAnchor).isActive = true
+        widthAnchor.constraint(equalTo: myview.widthAnchor).isActive = true
+        topAnchor.constraint(equalTo: myview.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: myview.bottomAnchor).isActive = true
+        
         addSubview(contentView)
-        contentView.backgroundColor = .red
         contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        contentView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        setupImgs()
-        setupLabels()
+    }
+    
+    // MARK: setupImages
+    // Adiciona as imagens do background e do pet
+    private func setupImages(){
+        contentView.layoutIfNeeded()
+        let imgBackground = UIImage(named: "backgroundPatinhas")!
+        imgViewBackground.image = imgBackground
+        
+        contentView.addSubview(imgViewBackground)
+        imgViewBackground.translatesAutoresizingMaskIntoConstraints = false
+        imgViewBackground.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        imgViewBackground.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         
         contentView.layoutIfNeeded()
-        contentSize = CGSize(width: frame.size.width, height: contentView.frame.height)
-    }
-    
-    func setupImgs(){
-        let imgBackground = UIImage(named: "backgroundPatinhas")!
-        imgv.image = imgBackground
         
-        contentView.addSubview(imgv)
-        imgv.translatesAutoresizingMaskIntoConstraints = false
-        imgv.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
-        imgv.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        let imgPet = UIImage(named: "imgPlaceholder")!
+        let imgViewPet = UIImageView(image: imgPet)
         
-        
-        let imgPet = UIImage(systemName: "square.fill")!
-        let imgvPet = UIImageView(image: imgPet)
-        
-        //imgv.center = center
-        contentView.addSubview(imgvPet)
-        let widthBackground = imgv.frame.width / 1.5
-        imgvPet.translatesAutoresizingMaskIntoConstraints = false
-        imgvPet.widthAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.heightAnchor.constraint(equalToConstant: widthBackground).isActive = true
-        imgvPet.centerXAnchor.constraint(equalTo: imgv.centerXAnchor).isActive = true
-        imgvPet.centerYAnchor.constraint(equalTo: imgv.centerYAnchor).isActive = true
+        imgViewPet.layer.cornerRadius = 50
+        imgViewPet.layer.masksToBounds = true
+        contentView.addSubview(imgViewPet)
+        let widthBackground = imgViewBackground.frame.width / 1.7
+        imgViewPet.translatesAutoresizingMaskIntoConstraints = false
+        imgViewPet.widthAnchor.constraint(equalToConstant: widthBackground).isActive = true
+        imgViewPet.heightAnchor.constraint(equalToConstant: widthBackground).isActive = true
+        imgViewPet.centerXAnchor.constraint(equalTo: imgViewBackground.centerXAnchor).isActive = true
+        imgViewPet.centerYAnchor.constraint(equalTo: imgViewBackground.centerYAnchor).isActive = true
         
     }
     
-    func setupLabels(){
-        // Espécie
-        // Nome
-        // Raça
-        // Sexo
-        // Data de nascimento
+    // MARK: addLabels
+    // Adiciona todas as labels necessárias
+    private func addLabels(){
+        contentView.layoutIfNeeded()
         
-        let lblEspecie = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-        let lblNome = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-        let lblRaca = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-        let lblSexo = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-        let lblNascimento = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
+        var constraintConstant = imgViewBackground.frame.height + 20
+        let fontSize: CGFloat = 16
         
-        contentView.addSubview(lblEspecie)
-        contentView.addSubview(lblNome)
-        contentView.addSubview(lblRaca)
-        contentView.addSubview(lblSexo)
-        contentView.addSubview(lblNascimento)
+        let lblSpecies  = CustomLabel(text: "Espécie: \(information.species)",             fontSize: fontSize)
+        let lblName     = CustomLabel(text: "Nome: \(information.name)",                   fontSize: fontSize)
+        let lblBreed    = CustomLabel(text: "Raça: \(information.breed)",                  fontSize: fontSize)
+        let lblGender   = CustomLabel(text: "Sexo: \(information.gender)",                 fontSize: fontSize)
+        let lblBirth    = CustomLabel(text: "Data de nascimento: \(information.birth)",    fontSize: fontSize)
+        let lblColor    = CustomLabel(text: "Cor: \(information.color)",                   fontSize: fontSize)
+        let lblWeight   = CustomLabel(text: "Peso: \(information.weight)",                 fontSize: fontSize)
+        let lblMoreInfo = CustomLabel(text: "Outras informações: \(information.moreInfo)", fontSize: fontSize)
         
-        lblEspecie.setupConstraints(marginsView: layoutMarginsGuide, lastItem: imgv.layoutMarginsGuide)
-        lblNome.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblEspecie.layoutMarginsGuide)
-        lblRaca.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblNome.layoutMarginsGuide)
-        lblSexo.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblRaca.layoutMarginsGuide)
-        lblNascimento.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblSexo.layoutMarginsGuide)
+        setupLabel(label: lblSpecies, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
+        setupLabel(label: lblName, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        let lblEspecie2 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-        let lblNome2 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-        let lblRaca2 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-        let lblSexo2 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-        let lblNascimento2 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
+        setupLabel(label: lblBreed, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        contentView.addSubview(lblEspecie2)
-        contentView.addSubview(lblNome2)
-        contentView.addSubview(lblRaca2)
-        contentView.addSubview(lblSexo2)
-        contentView.addSubview(lblNascimento2)
+        setupLabel(label: lblGender, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        lblEspecie2.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblNascimento.layoutMarginsGuide)
-        lblNome2.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblEspecie2.layoutMarginsGuide)
-        lblRaca2.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblNome2.layoutMarginsGuide)
-        lblSexo2.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblRaca2.layoutMarginsGuide)
-        lblNascimento2.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblSexo2.layoutMarginsGuide)
+        setupLabel(label: lblBirth, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        let lblEspecie3 = CustomLabel(text: "Espécie: \(information.especie)", fontSize: 14)
-        let lblNome3 = CustomLabel(text: "Nome: \(information.nome)", fontSize: 14)
-        let lblRaca3 = CustomLabel(text: "Raça: \(information.raca)", fontSize: 14)
-        let lblSexo3 = CustomLabel(text: "Sexo: \(information.sexo)", fontSize: 14)
-        let lblNascimento3 = CustomLabel(text: "Data de nascimento: \(information.nascimento)", fontSize: 14)
+        setupLabel(label: lblColor, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        contentView.addSubview(lblEspecie3)
-        contentView.addSubview(lblNome3)
-        contentView.addSubview(lblRaca3)
-        contentView.addSubview(lblSexo3)
-        contentView.addSubview(lblNascimento3)
+        setupLabel(label: lblWeight, constant: constraintConstant, isLast: false)
+        constraintConstant += lblSpecies.frame.height + 40
         
-        lblEspecie3.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblNascimento2.layoutMarginsGuide)
-        lblNome3.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblEspecie3.layoutMarginsGuide)
-        lblRaca3.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblNome3.layoutMarginsGuide)
-        lblSexo3.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblRaca3.layoutMarginsGuide)
-        lblNascimento3.setupConstraints(marginsView: layoutMarginsGuide, lastItem: lblSexo3.layoutMarginsGuide)
+        setupLabel(label: lblMoreInfo, constant: constraintConstant, isLast: true)
+        constraintConstant += lblSpecies.frame.height + 40
+        
+    }
+    
+    // MARK: setupLabel
+    // Faz a configuração da label
+    private func setupLabel(label: CustomLabel, constant: CGFloat, isLast: Bool){
+        contentView.addSubview(label)
+        label.setupConstraints(marginsView: contentView.layoutMarginsGuide, constant: constant)
+        
+        if isLast {
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40).isActive = true
+        }
     }
     
 }
-*/

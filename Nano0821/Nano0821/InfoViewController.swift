@@ -11,31 +11,24 @@ class InfoViewController: UIViewController {
     
     let customView = InfoView()
     
+    // MARK: loadView
     override func loadView() {
         view = UIView()
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
         view.addSubview(customView)
     }
     
+    // MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
-        customView.setupConstraints(with: view)
+        customView.setupScreen(view: view)
         
     }
 
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
