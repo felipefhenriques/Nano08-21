@@ -16,6 +16,9 @@
 		02293CDF26D4023600AA282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02293CDD26D4023600AA282D /* LaunchScreen.storyboard */; };
 		02293CEA26D4023600AA282D /* Nano0821Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CE926D4023600AA282D /* Nano0821Tests.swift */; };
 		02293CF526D4023600AA282D /* Nano0821UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CF426D4023600AA282D /* Nano0821UITests.swift */; };
+		025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */; };
+		025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C926D464190068EAFF /* HomeScreenView.swift */; };
+		025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		02293CF026D4023600AA282D /* Nano0821UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nano0821UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02293CF426D4023600AA282D /* Nano0821UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano0821UITests.swift; sourceTree = "<group>"; };
 		02293CF626D4023600AA282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		025A90C926D464190068EAFF /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeCollectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +118,6 @@
 		02293CCE26D4023400AA282D /* Nano0821 */ = {
 			isa = PBXGroup;
 			children = (
-				025A90C626D44FC10068EAFF /* Scenes */,
-				025A90C426D44F9C0068EAFF /* View */,
 				02172E7326D413E20052CA89 /* Nano0821.entitlements */,
 				02293CCF26D4023400AA282D /* AppDelegate.swift */,
 				02293CD126D4023400AA282D /* SceneDelegate.swift */,
@@ -122,6 +126,8 @@
 				02293CDD26D4023600AA282D /* LaunchScreen.storyboard */,
 				02293CE026D4023600AA282D /* Info.plist */,
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
+				025A90C626D44FC10068EAFF /* Scenes */,
+				025A90C426D44F9C0068EAFF /* View */,
 			);
 			path = Nano0821;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				025A90C526D44FB90068EAFF /* UIElements */,
+				025A90C926D464190068EAFF /* HomeScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 		025A90C526D44FB90068EAFF /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 		025A90C626D44FC10068EAFF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -298,7 +307,10 @@
 				02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */,
 				02293CD426D4023400AA282D /* ViewController.swift in Sources */,
 				02293CD026D4023400AA282D /* AppDelegate.swift in Sources */,
+				025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */,
+				025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */,
 				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
+				025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
