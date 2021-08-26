@@ -16,6 +16,9 @@
 		02293CDF26D4023600AA282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02293CDD26D4023600AA282D /* LaunchScreen.storyboard */; };
 		02293CEA26D4023600AA282D /* Nano0821Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CE926D4023600AA282D /* Nano0821Tests.swift */; };
 		02293CF526D4023600AA282D /* Nano0821UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CF426D4023600AA282D /* Nano0821UITests.swift */; };
+		10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC326D55FF30084051E /* InfoViewController.swift */; };
+		10CB7DC626D560080084051E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC526D560080084051E /* InfoView.swift */; };
+		10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC726D5783B0084051E /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		02293CF026D4023600AA282D /* Nano0821UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nano0821UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02293CF426D4023600AA282D /* Nano0821UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano0821UITests.swift; sourceTree = "<group>"; };
 		02293CF626D4023600AA282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10CB7DC326D55FF30084051E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		10CB7DC526D560080084051E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		10CB7DC726D5783B0084051E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,9 @@
 				02293CDD26D4023600AA282D /* LaunchScreen.storyboard */,
 				02293CE026D4023600AA282D /* Info.plist */,
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
+				10CB7DC326D55FF30084051E /* InfoViewController.swift */,
+				10CB7DC526D560080084051E /* InfoView.swift */,
+				10CB7DC726D5783B0084051E /* CustomLabel.swift */,
 			);
 			path = Nano0821;
 			sourceTree = "<group>";
@@ -298,7 +307,10 @@
 				02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */,
 				02293CD426D4023400AA282D /* ViewController.swift in Sources */,
 				02293CD026D4023400AA282D /* AppDelegate.swift in Sources */,
+				10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */,
 				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
+				10CB7DC626D560080084051E /* InfoView.swift in Sources */,
+				10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
