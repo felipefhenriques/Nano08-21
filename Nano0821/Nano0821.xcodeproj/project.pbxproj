@@ -19,6 +19,7 @@
 		10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC326D55FF30084051E /* InfoViewController.swift */; };
 		10CB7DC626D560080084051E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC526D560080084051E /* InfoView.swift */; };
 		10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC726D5783B0084051E /* CustomLabel.swift */; };
+		10D881F326D818DB0008757B /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D881F226D818DB0008757B /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		10CB7DC326D55FF30084051E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		10CB7DC526D560080084051E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		10CB7DC726D5783B0084051E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		10D881F226D818DB0008757B /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				10CB7DC326D55FF30084051E /* InfoViewController.swift */,
 				10CB7DC526D560080084051E /* InfoView.swift */,
 				10CB7DC726D5783B0084051E /* CustomLabel.swift */,
+				10D881F226D818DB0008757B /* ValidationService.swift */,
 			);
 			path = Nano0821;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */,
 				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
 				10CB7DC626D560080084051E /* InfoView.swift in Sources */,
+				10D881F326D818DB0008757B /* ValidationService.swift in Sources */,
 				10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
