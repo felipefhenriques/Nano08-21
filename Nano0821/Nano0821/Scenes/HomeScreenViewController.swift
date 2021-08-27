@@ -53,8 +53,8 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = EditViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.modalTransitionStyle = .crossDissolve
+        //vc.modalPresentationStyle = .automatic
+        //vc.modalTransitionStyle = .crossDissolve
         indexPath.item == 0 ? self.present(vc, animated: true, completion: nil) : print ("pet")
     }
     

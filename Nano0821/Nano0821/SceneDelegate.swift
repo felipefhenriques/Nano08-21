@@ -17,8 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Cria uma Window a partir da instância de cena criada
         let window = UIWindow(windowScene: windowScene)
-        //window.rootViewController = UINavigationController(rootViewController: InfoViewController())
-        window.rootViewController = HomeScreenViewController()
+        let nav = UINavigationController(rootViewController: HomeScreenViewController())
+        nav.isToolbarHidden = true
+        
+        
+        window.rootViewController = nav
+        //window.rootViewController = HomeScreenViewController()
         
         self.window = window
         window.makeKeyAndVisible()
