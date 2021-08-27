@@ -22,12 +22,12 @@ class petCoreData {
         
         let managedObj = NSManagedObject(entity: entityDescription!, insertInto: self.objectContext)
         
-        readEntries(entity: "Pet")
+        readEntries(entity: "PetEntity")
         if savedPets.count > 0 {
-            let lastIndex = savedPets[savedPets.count-1].value(forKey: "indice") as! Int
-            managedObj.setValue((lastIndex + 1), forKey: "indice")
+            let lastIndex = savedPets[savedPets.count-1].value(forKey: "index") as! Int
+            managedObj.setValue((lastIndex + 1), forKey: "index")
         } else {
-            managedObj.setValue(1, forKey: "indice")
+            managedObj.setValue(0, forKey: "index")
         }
         
         managedObj.setValue(pet.especie, forKey: "especie")
@@ -61,7 +61,6 @@ class petCoreData {
             print("Não foi possível carregar os dados. \(error), \(error.userInfo)")
             }
         
-        
     }
 
     /// Reads the Pet entity and returns an array with as the Pet struct
@@ -82,14 +81,16 @@ class petCoreData {
         
         if savedPets.count > 0 {
             for i in 0...savedPets.count-1 {
-                petsArray[i].index = savedPets[i].value(forKey: "indice") as! Int
-                petsArray[i].especie = savedPets[i].value(forKey: "especie") as! String
-                petsArray[i].nome = savedPets[i].value(forKey: "nome") as! String
-                petsArray[i].raca = savedPets[i].value(forKey: "raca") as! String
-                petsArray[i].sexo = savedPets[i].value(forKey: "sexo") as! String
-                petsArray[i].cor = savedPets[i].value(forKey: "cor") as! String
-                petsArray[i].peso = savedPets[i].value(forKey: "peso") as! Double
-                petsArray[i].outros = savedPets[i].value(forKey: "outros") as! String
+                let pet: Pet = Pet(
+                    index: savedPets[i].value(forKey: "index") as! Int,
+                    especie: savedPets[i].value(forKey: "especie") as! String,
+                    nome: savedPets[i].value(forKey: "nome") as! String,
+                    raca: savedPets[i].value(forKey: "raca") as! String,
+                    sexo: savedPets[i].value(forKey: "sexo") as! String,
+                    cor: savedPets[i].value(forKey: "cor") as! String,
+                    peso: savedPets[i].value(forKey: "peso") as! Double,
+                    outros: savedPets[i].value(forKey: "outros") as! String)
+                petsArray.append(pet)
             }
         }
         return petsArray

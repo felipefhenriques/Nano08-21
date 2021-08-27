@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct Animal {
     let species: String
@@ -23,13 +24,16 @@ class InfoView: UIScrollView {
     // MARK: variáveis e constantes
     let contentView = UIView()
     let imgViewBackground = UIImageView()
+    let coreData = petCoreData()
+    var searchId = Int()
     
     let information = Animal(species: "Canina", name: "Nico", breed: "Pinscher", gender: "Macho", birth: "12/12/2014",color: "Marrom",weight: "3,8", moreInfo: "pi pi pi po po po bla bla bla coisa linda da mãe. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     
     // MARK: init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(frame: CGRect, idPet: Int) {
+        super.init(frame: .zero)
         backgroundColor = .white
+        searchId = idPet
     }
     
     required init?(coder: NSCoder) {
@@ -41,6 +45,14 @@ class InfoView: UIScrollView {
         setupConstraints(with: view)
         setupImages()
         addLabels()
+    }
+    
+    func loadPet() -> Pet {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        coreData.objectContext = appDelegate.persistentContainer.viewContext
+        var pet: Pet!
+        pet = coreData.readAndReturn(entity: "PetEntity")[searchId]
+        return pet
     }
     
     // MARK: setupConstraints
@@ -98,14 +110,16 @@ class InfoView: UIScrollView {
         var constraintConstant = imgViewBackground.frame.height + 20
         let fontSize: CGFloat = 16
         
-        let lblSpecies  = CustomLabel(text: "Espécie: \(information.species)",             fontSize: fontSize)
-        let lblName     = CustomLabel(text: "Nome: \(information.name)",                   fontSize: fontSize)
-        let lblBreed    = CustomLabel(text: "Raça: \(information.breed)",                  fontSize: fontSize)
-        let lblGender   = CustomLabel(text: "Sexo: \(information.gender)",                 fontSize: fontSize)
+        var pet: Pet = loadPet()
+        
+        let lblSpecies  = CustomLabel(text: "Espécie: \(pet.especie)",             fontSize: fontSize)
+        let lblName     = CustomLabel(text: "Nome: \(pet.nome)",                   fontSize: fontSize)
+        let lblBreed    = CustomLabel(text: "Raça: \(pet.raca)",                  fontSize: fontSize)
+        let lblGender   = CustomLabel(text: "Sexo: \(pet.sexo)",                 fontSize: fontSize)
         let lblBirth    = CustomLabel(text: "Data de nascimento: \(information.birth)",    fontSize: fontSize)
-        let lblColor    = CustomLabel(text: "Cor: \(information.color)",                   fontSize: fontSize)
-        let lblWeight   = CustomLabel(text: "Peso: \(information.weight)",                 fontSize: fontSize)
-        let lblMoreInfo = CustomLabel(text: "Outras informações: \(information.moreInfo)", fontSize: fontSize)
+        let lblColor    = CustomLabel(text: "Cor: \(pet.cor)",                   fontSize: fontSize)
+        let lblWeight   = CustomLabel(text: "Peso: \(pet.peso)",                 fontSize: fontSize)
+        let lblMoreInfo = CustomLabel(text: "Outras informações: \(pet.outros)", fontSize: fontSize)
         
         setupLabel(label: lblSpecies, constant: constraintConstant, isLast: false)
         constraintConstant += lblSpecies.frame.height + 40

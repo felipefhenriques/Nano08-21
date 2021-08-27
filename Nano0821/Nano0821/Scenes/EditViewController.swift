@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class EditViewController: UIViewController, UITextFieldDelegate {
     
     let customView = EditView()
+    let coreData = petCoreData()
     
     // MARK: loadView
     override func loadView() {
@@ -39,6 +41,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         customView.setupScreen(view: view)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Adicionar", style: .plain, target: self, action: #selector(addTapped))
     }
 
     // MARK: viewDidLoad
@@ -61,6 +64,20 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         Image.delegate = self
         Image.allowsEditing = true
         present(Image, animated: true)
+    }
+    
+    @objc func addTapped(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        coreData.objectContext = appDelegate.persistentContainer.viewContext
+        
+        let petAdicionado = Pet(
+            index: 0, especie: customView.fdSpecies.text ?? "",
+            nome: customView.fdName.text ?? "", raca: customView.fdBreed.text ?? "",
+            sexo: customView.fdGender.text ?? "", cor: customView.fdColor.text ?? "",
+            peso: Double(customView.fdWeight.text ?? "0") ?? 0, outros: customView.fdMoreInfo.text ?? "")
+        coreData.savePet(entity: "PetEntity", pet: petAdicionado)
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: Dismiss Keyboard
