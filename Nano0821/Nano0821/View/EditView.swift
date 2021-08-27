@@ -58,7 +58,7 @@ class EditView: UIScrollView {
     
     private func setupImage(){
         contentView.layoutIfNeeded()
-        let imgBackground = UIImage(named: "PataLaranja")!
+        let imgBackground = UIImage(named: "pataLaranja")!
         imgViewBackground.image = imgBackground
         
         contentView.addSubview(imgViewBackground)
