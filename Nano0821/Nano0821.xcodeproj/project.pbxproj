@@ -16,6 +16,11 @@
 		02293CDF26D4023600AA282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02293CDD26D4023600AA282D /* LaunchScreen.storyboard */; };
 		02293CEA26D4023600AA282D /* Nano0821Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CE926D4023600AA282D /* Nano0821Tests.swift */; };
 		02293CF526D4023600AA282D /* Nano0821UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CF426D4023600AA282D /* Nano0821UITests.swift */; };
+		025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */; };
+		025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C926D464190068EAFF /* HomeScreenView.swift */; };
+		025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */; };
+		025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CD26D80C490068EAFF /* PetCoreData.swift */; };
+		025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CF26D80CFF0068EAFF /* PetModel.swift */; };
 		10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC326D55FF30084051E /* InfoViewController.swift */; };
 		10CB7DC626D560080084051E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC526D560080084051E /* InfoView.swift */; };
 		10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC726D5783B0084051E /* CustomLabel.swift */; };
@@ -61,6 +66,11 @@
 		02293CF026D4023600AA282D /* Nano0821UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nano0821UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02293CF426D4023600AA282D /* Nano0821UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano0821UITests.swift; sourceTree = "<group>"; };
 		02293CF626D4023600AA282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		025A90C926D464190068EAFF /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeCollectionCell.swift; sourceTree = "<group>"; };
+		025A90CD26D80C490068EAFF /* PetCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCoreData.swift; sourceTree = "<group>"; };
+		025A90CF26D80CFF0068EAFF /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		10CB7DC326D55FF30084051E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		10CB7DC526D560080084051E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		10CB7DC726D5783B0084051E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -70,6 +80,7 @@
 		D3BD240126D95AD7005165F6 /* EditLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLabel.swift; sourceTree = "<group>"; };
 		D3BD240326D95AF1005165F6 /* EditTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextField.swift; sourceTree = "<group>"; };
 		D3BD240526D95B0A005165F6 /* EditPetIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetIcon.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +152,8 @@
 				02293CDD26D4023600AA282D /* LaunchScreen.storyboard */,
 				02293CE026D4023600AA282D /* Info.plist */,
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
+				025A90CD26D80C490068EAFF /* PetCoreData.swift */,
+				025A90CF26D80CFF0068EAFF /* PetModel.swift */,
 				10CB7DC326D55FF30084051E /* InfoViewController.swift */,
 				10CB7DC526D560080084051E /* InfoView.swift */,
 				10CB7DC726D5783B0084051E /* CustomLabel.swift */,
@@ -171,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				025A90C526D44FB90068EAFF /* UIElements */,
+				025A90C926D464190068EAFF /* HomeScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +192,7 @@
 		025A90C526D44FB90068EAFF /* UIElements */ = {
 			isa = PBXGroup;
 			children = (
+				025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */,
 			);
 			path = UIElements;
 			sourceTree = "<group>";
@@ -185,6 +200,7 @@
 		025A90C626D44FC10068EAFF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -330,10 +346,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */,
 				02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */,
 				D3BD240426D95AF1005165F6 /* EditTextField.swift in Sources */,
 				02293CD426D4023400AA282D /* ViewController.swift in Sources */,
 				02293CD026D4023400AA282D /* AppDelegate.swift in Sources */,
+				025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */,
+				025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */,
+				025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */,
+				025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */,
 				10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */,
 				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
 				D3BD240226D95AD7005165F6 /* EditLabel.swift in Sources */,
