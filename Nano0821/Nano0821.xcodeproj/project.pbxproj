@@ -21,6 +21,15 @@
 		025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */; };
 		025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CD26D80C490068EAFF /* PetCoreData.swift */; };
 		025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CF26D80CFF0068EAFF /* PetModel.swift */; };
+		10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC326D55FF30084051E /* InfoViewController.swift */; };
+		10CB7DC626D560080084051E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC526D560080084051E /* InfoView.swift */; };
+		10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC726D5783B0084051E /* CustomLabel.swift */; };
+		10D881F326D818DB0008757B /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D881F226D818DB0008757B /* ValidationService.swift */; };
+		D3BD23FD26D95A2E005165F6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD23FC26D95A2E005165F6 /* EditViewController.swift */; };
+		D3BD240026D95AAC005165F6 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD23FF26D95AAC005165F6 /* EditView.swift */; };
+		D3BD240226D95AD7005165F6 /* EditLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD240126D95AD7005165F6 /* EditLabel.swift */; };
+		D3BD240426D95AF1005165F6 /* EditTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD240326D95AF1005165F6 /* EditTextField.swift */; };
+		D3BD240626D95B0A005165F6 /* EditPetIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD240526D95B0A005165F6 /* EditPetIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +71,16 @@
 		025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeCollectionCell.swift; sourceTree = "<group>"; };
 		025A90CD26D80C490068EAFF /* PetCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCoreData.swift; sourceTree = "<group>"; };
 		025A90CF26D80CFF0068EAFF /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		10CB7DC326D55FF30084051E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		10CB7DC526D560080084051E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		10CB7DC726D5783B0084051E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		10D881F226D818DB0008757B /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		D3BD23FC26D95A2E005165F6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		D3BD23FF26D95AAC005165F6 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		D3BD240126D95AD7005165F6 /* EditLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLabel.swift; sourceTree = "<group>"; };
+		D3BD240326D95AF1005165F6 /* EditTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextField.swift; sourceTree = "<group>"; };
+		D3BD240526D95B0A005165F6 /* EditPetIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetIcon.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +141,9 @@
 		02293CCE26D4023400AA282D /* Nano0821 */ = {
 			isa = PBXGroup;
 			children = (
+				D3BD23FE26D95A37005165F6 /* Add&Edit */,
+				025A90C626D44FC10068EAFF /* Scenes */,
+				025A90C426D44F9C0068EAFF /* View */,
 				02172E7326D413E20052CA89 /* Nano0821.entitlements */,
 				02293CCF26D4023400AA282D /* AppDelegate.swift */,
 				02293CD126D4023400AA282D /* SceneDelegate.swift */,
@@ -130,10 +152,12 @@
 				02293CDD26D4023600AA282D /* LaunchScreen.storyboard */,
 				02293CE026D4023600AA282D /* Info.plist */,
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
-				025A90C626D44FC10068EAFF /* Scenes */,
-				025A90C426D44F9C0068EAFF /* View */,
 				025A90CD26D80C490068EAFF /* PetCoreData.swift */,
 				025A90CF26D80CFF0068EAFF /* PetModel.swift */,
+				10CB7DC326D55FF30084051E /* InfoViewController.swift */,
+				10CB7DC526D560080084051E /* InfoView.swift */,
+				10CB7DC726D5783B0084051E /* CustomLabel.swift */,
+				10D881F226D818DB0008757B /* ValidationService.swift */,
 			);
 			path = Nano0821;
 			sourceTree = "<group>";
@@ -179,6 +203,18 @@
 				025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D3BD23FE26D95A37005165F6 /* Add&Edit */ = {
+			isa = PBXGroup;
+			children = (
+				D3BD23FC26D95A2E005165F6 /* EditViewController.swift */,
+				D3BD23FF26D95AAC005165F6 /* EditView.swift */,
+				D3BD240126D95AD7005165F6 /* EditLabel.swift */,
+				D3BD240326D95AF1005165F6 /* EditTextField.swift */,
+				D3BD240526D95B0A005165F6 /* EditPetIcon.swift */,
+			);
+			path = "Add&Edit";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,13 +348,22 @@
 			files = (
 				025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */,
 				02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */,
+				D3BD240426D95AF1005165F6 /* EditTextField.swift in Sources */,
 				02293CD426D4023400AA282D /* ViewController.swift in Sources */,
 				02293CD026D4023400AA282D /* AppDelegate.swift in Sources */,
 				025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */,
 				025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */,
 				025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */,
-				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
 				025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */,
+				10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */,
+				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
+				D3BD240226D95AD7005165F6 /* EditLabel.swift in Sources */,
+				10CB7DC626D560080084051E /* InfoView.swift in Sources */,
+				D3BD240626D95B0A005165F6 /* EditPetIcon.swift in Sources */,
+				D3BD240026D95AAC005165F6 /* EditView.swift in Sources */,
+				10D881F326D818DB0008757B /* ValidationService.swift in Sources */,
+				10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */,
+				D3BD23FD26D95A2E005165F6 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
