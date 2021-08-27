@@ -10,8 +10,8 @@ import Foundation
 struct ValidationService {
     func validateDate(_ day: String?, month: String?, year: String?) throws -> (String, String, String) {
         // Valores inválidos
-        guard let dayV = day else { throw ValidationError.invalidValue }
-        guard let monthV = month else { throw ValidationError.invalidValue }
+        guard var dayV = day else { throw ValidationError.invalidValue }
+        guard var monthV = month else { throw ValidationError.invalidValue }
         guard let yearV = year else { throw ValidationError.invalidValue }
         
         // Os valores não são inteiros
@@ -31,9 +31,14 @@ struct ValidationService {
             throw ValidationError.dayNotInMonth
         }
         
+        // Verifica se o ano é válido, nada do futuro nem muito velho
         let currentYear = Calendar.current.component(.year, from: Date())
-        if yearInt > currentYear { throw ValidationError.isNotValidYear }
-            
+        if yearInt > currentYear && yearInt < 1600 { throw ValidationError.isNotValidYear }
+        
+        // Formatação de String de dia e mês
+        if dayInt < 10 { dayV = "0" + dayV }
+        if monthInt < 10 { monthV = "0" + monthV }
+        
         return (dayV, monthV, yearV)
     }
     

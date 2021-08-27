@@ -95,6 +95,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             let dateS = "\(dateTriple.0)/\(dateTriple.1)/\(dateTriple.2)"
             print(dateS)
             
+            // Se deu tudo certo
             
             let petAdicionado = Pet(
                 index: 0, especie: species,
@@ -104,8 +105,6 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             coreData.savePet(entity: "PetEntity", pet: petAdicionado)
             
             self.navigationController?.popViewController(animated: true)
-            
-            
             
         } catch {
             alert.title = "Erro"
