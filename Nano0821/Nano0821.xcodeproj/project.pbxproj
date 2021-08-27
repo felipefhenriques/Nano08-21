@@ -19,6 +19,8 @@
 		025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */; };
 		025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C926D464190068EAFF /* HomeScreenView.swift */; };
 		025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */; };
+		025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CD26D80C490068EAFF /* PetCoreData.swift */; };
+		025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90CF26D80CFF0068EAFF /* PetModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		025A90C926D464190068EAFF /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		025A90CB26D558920068EAFF /* CustomHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeCollectionCell.swift; sourceTree = "<group>"; };
+		025A90CD26D80C490068EAFF /* PetCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCoreData.swift; sourceTree = "<group>"; };
+		025A90CF26D80CFF0068EAFF /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
 				025A90C626D44FC10068EAFF /* Scenes */,
 				025A90C426D44F9C0068EAFF /* View */,
+				025A90CD26D80C490068EAFF /* PetCoreData.swift */,
+				025A90CF26D80CFF0068EAFF /* PetModel.swift */,
 			);
 			path = Nano0821;
 			sourceTree = "<group>";
@@ -304,10 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				025A90CE26D80C490068EAFF /* PetCoreData.swift in Sources */,
 				02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */,
 				02293CD426D4023400AA282D /* ViewController.swift in Sources */,
 				02293CD026D4023400AA282D /* AppDelegate.swift in Sources */,
 				025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */,
+				025A90D026D80CFF0068EAFF /* PetModel.swift in Sources */,
 				025A90CC26D558930068EAFF /* CustomHomeCollectionCell.swift in Sources */,
 				02293CD226D4023400AA282D /* SceneDelegate.swift in Sources */,
 				025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */,

@@ -10,6 +10,9 @@ import UIKit
 
 class petCollectionCell: UICollectionViewCell {
     
+    var coreData = petCoreData()
+    var petsArray: [Pet] = []
+    
     var petImage = UIImageView()
     var plusImage = UIImageView()
     var labelNome: UILabel = {
@@ -29,8 +32,13 @@ class petCollectionCell: UICollectionViewCell {
     override init(frame: CGRect = .zero){
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
+        
+        //View setup
         collectionCellConstraints()
         self.layer.cornerRadius = 30
+        
+        //Initializing vars
+        petsArray = coreData.readAndReturn(entity: "PetEntity")
     }
     
     func loadCell(index: Int){

@@ -11,6 +11,7 @@ import UIKit
 class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var homeView: HomeScreenView!
+    var coreData = petCoreData()
     
     init(){
         super.init(nibName: nil, bundle: nil)
@@ -34,7 +35,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return 1 + coreData.readAndReturn(entity: "PetEntity").count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
