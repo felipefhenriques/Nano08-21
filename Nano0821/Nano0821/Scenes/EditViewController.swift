@@ -13,6 +13,9 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     let customView = EditView()
     let coreData = petCoreData()
     
+    var alert = UIAlertController(title: "Mensagem", message: "msg", preferredStyle: .alert)
+    let validation = ValidationService()
+    
     // MARK: loadView
     override func loadView() {
         view = UIView()
@@ -48,6 +51,10 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     @objc func keyboardWillChange(notification: Notification){
@@ -70,14 +77,43 @@ class EditViewController: UIViewController, UITextFieldDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreData.objectContext = appDelegate.persistentContainer.viewContext
         
-        let petAdicionado = Pet(
-            index: 0, especie: customView.fdSpecies.text ?? "",
-            nome: customView.fdName.text ?? "", raca: customView.fdBreed.text ?? "",
-            sexo: customView.fdGender.text ?? "", cor: customView.fdColor.text ?? "",
-            peso: Double(customView.fdWeight.text ?? "0") ?? 0, outros: customView.fdMoreInfo.text ?? "")
-        coreData.savePet(entity: "PetEntity", pet: petAdicionado)
+        do {
+            // Validar quanto ao campo estar em branco
+            let species = try validation.validateEmpties(customView.fdSpecies.text)
+            let name = try validation.validateEmpties(customView.fdName.text)
+            let breed = try validation.validateEmpties(customView.fdBreed.text)
+            let gender = try validation.validateEmpties(customView.fdGender.text)
+            let color = try validation.validateEmpties(customView.fdColor.text)
+            let weightS = try validation.validateEmpties(customView.fdWeight.text)
+            let other = try validation.validateEmpties(customView.fdMoreInfo.text)
+            
+            // Validar se peso é um numero
+            let weight = try validation.validateWeight(weightS)
+            
+            // Validar a data
+            let dateTriple = try validation.validateDate(customView.fdDay.text, month: customView.fdMonth.text, year: customView.fdYear.text)
+            let dateS = "\(dateTriple.0)/\(dateTriple.1)/\(dateTriple.2)"
+            print(dateS)
+            
+            // Se deu tudo certo
+            
+            let petAdicionado = Pet(
+                index: 0, especie: species,
+                nome: name, raca: breed,
+                sexo: gender, cor: color,
+                peso: weight, outros: other)
+            coreData.savePet(entity: "PetEntity", pet: petAdicionado)
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        } catch {
+            alert.title = "Erro"
+            alert.message = error.localizedDescription
+            present(alert, animated: true)
+        }
         
-        self.navigationController?.popViewController(animated: true)
+        
+        
     }
     
     // MARK: Dismiss Keyboard
