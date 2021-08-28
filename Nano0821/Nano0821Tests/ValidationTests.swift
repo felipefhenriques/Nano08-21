@@ -43,11 +43,19 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateEmpties(nil)) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+        
+        XCTAssertThrowsError(try validation.validateDate(nil, month: nil, year: nil)) { thrownError in
+            error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     
@@ -60,16 +68,19 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("02", month: "Três", year: "2021")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("02", month: "03", year: "Dois mil e vinte e um")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     // MARK: Testes para .isNotValidDay
@@ -81,11 +92,13 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("32", month: "03", year: "2021")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     // MARK: Testes para .isNotValidMonth
@@ -97,11 +110,13 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("21", month: "13", year: "2021")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     // MARK: Testes para .isNotValidYear
@@ -113,11 +128,13 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("25", month: "12", year: "2")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     
@@ -130,6 +147,7 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
     
     // MARK: Testes para .dayNotInMonth
@@ -141,11 +159,13 @@ class ValidationTests: XCTestCase {
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
         
         XCTAssertThrowsError(try validation.validateDate("30", month: "02", year: "2021")) { thrownError in
             error = thrownError as? ValidationError
         }
         XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
 
 }
