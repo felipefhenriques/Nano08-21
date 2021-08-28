@@ -14,7 +14,7 @@
 		02293CDA26D4023400AA282D /* Nano0821.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */; };
 		02293CDC26D4023600AA282D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02293CDB26D4023600AA282D /* Assets.xcassets */; };
 		02293CDF26D4023600AA282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02293CDD26D4023600AA282D /* LaunchScreen.storyboard */; };
-		02293CEA26D4023600AA282D /* Nano0821Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CE926D4023600AA282D /* Nano0821Tests.swift */; };
+		02293CEA26D4023600AA282D /* ValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CE926D4023600AA282D /* ValidationTests.swift */; };
 		02293CF526D4023600AA282D /* Nano0821UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02293CF426D4023600AA282D /* Nano0821UITests.swift */; };
 		025A90C826D4640A0068EAFF /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C726D4640A0068EAFF /* HomeScreenViewController.swift */; };
 		025A90CA26D464190068EAFF /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025A90C926D464190068EAFF /* HomeScreenView.swift */; };
@@ -60,7 +60,7 @@
 		02293CDE26D4023600AA282D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02293CE026D4023600AA282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02293CE526D4023600AA282D /* Nano0821Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nano0821Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02293CE926D4023600AA282D /* Nano0821Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano0821Tests.swift; sourceTree = "<group>"; };
+		02293CE926D4023600AA282D /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
 		02293CEB26D4023600AA282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02293CF026D4023600AA282D /* Nano0821UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Nano0821UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02293CF426D4023600AA282D /* Nano0821UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nano0821UITests.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 		02293CE826D4023600AA282D /* Nano0821Tests */ = {
 			isa = PBXGroup;
 			children = (
-				02293CE926D4023600AA282D /* Nano0821Tests.swift */,
+				02293CE926D4023600AA282D /* ValidationTests.swift */,
 				02293CEB26D4023600AA282D /* Info.plist */,
 			);
 			path = Nano0821Tests;
@@ -368,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02293CEA26D4023600AA282D /* Nano0821Tests.swift in Sources */,
+				02293CEA26D4023600AA282D /* ValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

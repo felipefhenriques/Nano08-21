@@ -33,7 +33,7 @@ struct ValidationService {
         
         // Verifica se o ano é válido, nada do futuro nem muito velho
         let currentYear = Calendar.current.component(.year, from: Date())
-        if yearInt > currentYear && yearInt < 1600 { throw ValidationError.isNotValidYear }
+        if yearInt > currentYear || yearInt < 1600 { throw ValidationError.isNotValidYear }
         
         // Formatação de String de dia e mês
         if dayInt < 10 { dayV = "0" + dayV }

@@ -25,7 +25,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
         homeView.collection.dataSource = self
         self.view = homeView
         
-        //coreData.deleteData(entity: "PetEntity")
+        coreData.deleteData(entity: "PetEntity")
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         coreData.objectContext = appDelegate.persistentContainer.viewContext
