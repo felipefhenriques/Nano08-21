@@ -110,7 +110,7 @@ class InfoView: UIScrollView {
         var constraintConstant = imgViewBackground.frame.height + 20
         let fontSize: CGFloat = 16
         
-        var pet: Pet = loadPet()
+        let pet: Pet = loadPet()
         
         let lblSpecies  = CustomLabel(text: "Espécie: \(pet.especie)",             fontSize: fontSize)
         let lblName     = CustomLabel(text: "Nome: \(pet.nome)",                   fontSize: fontSize)

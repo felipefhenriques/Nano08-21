@@ -43,7 +43,7 @@ class InfoViewController: UIViewController {
         print(coreData.readEntries(entity: "PetEntity"))
         
         coreData.deletePet(entity: "PetEntity", petIndex: idPet)
-        print("o id deletado é \(idPet)")
+        print("o id deletado é \(String(describing:idPet))")
         self.navigationController?.popViewController(animated: true)
     }
     
