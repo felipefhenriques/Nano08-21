@@ -58,7 +58,7 @@ class HomeScreenViewController: UIViewController, UICollectionViewDelegate, UICo
             return myCell
         } else {
             let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! petCollectionCell
-            myCell.loadCell(index: indexPath.item)
+            myCell.loadCell(index: indexPath.item-1)
             return myCell
         }
     }

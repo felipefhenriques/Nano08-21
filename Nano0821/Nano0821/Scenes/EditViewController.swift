@@ -12,6 +12,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     
     let customView = EditView()
     let coreData = petCoreData()
+    var petImage = UIImage()
     
     var alert = UIAlertController(title: "Mensagem", message: "msg", preferredStyle: .alert)
     let validation = ValidationFunctions()
@@ -98,10 +99,10 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             // Se deu tudo certo
             
             let petAdicionado = Pet(
-                index: 0, especie: species,
+                index: 0, imgData: petImage.pngData()!, especie: species,
                 nome: name, raca: breed,
                 sexo: gender, cor: color,
-                peso: weight, outros: other)
+                peso: weight, outros: other, dia: customView.fdDay.text!, mes: customView.fdMonth.text!, ano: customView.fdYear.text!)
             coreData.savePet(entity: "PetEntity", pet: petAdicionado)
             
             self.navigationController?.popViewController(animated: true)
@@ -142,6 +143,7 @@ extension EditViewController: UIImagePickerControllerDelegate, UINavigationContr
             customView.IconBttn.alpha = 1.0
             customView.IconBttn.layer.masksToBounds = true
             customView.IconBttn.layer.cornerRadius = 45
+            petImage = image
         }
         picker.dismiss(animated: true, completion: nil)
     }

@@ -30,7 +30,7 @@ class InfoViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         customView = InfoView(frame: .zero, idPet: idPet)
         self.idPet = idPet
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Deletar", style: .plain, target: self, action: #selector(deleteId))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Deletar", style: .plain, target: self, action: #selector(deleteId))
     }
     
     required init?(coder: NSCoder) {

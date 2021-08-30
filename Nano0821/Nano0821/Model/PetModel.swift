@@ -8,7 +8,8 @@
 import Foundation
 
 public struct Pet: Equatable {
-    var index: Int 
+    var index: Int
+    var imgData: Data
     var especie: String
     var nome: String
     var raca: String
@@ -16,4 +17,7 @@ public struct Pet: Equatable {
     var cor: String
     var peso: Double
     var outros: String
+    var dia: String
+    var mes: String
+    var ano: String
 }

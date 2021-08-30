@@ -90,6 +90,8 @@ class InfoView: UIScrollView {
         let imgPet = UIImage(named: "imgPlaceholder")!
         let imgViewPet = UIImageView(image: imgPet)
         
+        let pet: Pet = loadPet()
+        
         imgViewPet.layer.cornerRadius = 50
         imgViewPet.layer.masksToBounds = true
         contentView.addSubview(imgViewPet)
@@ -99,7 +101,7 @@ class InfoView: UIScrollView {
         imgViewPet.heightAnchor.constraint(equalToConstant: widthBackground).isActive = true
         imgViewPet.centerXAnchor.constraint(equalTo: imgViewBackground.centerXAnchor).isActive = true
         imgViewPet.centerYAnchor.constraint(equalTo: imgViewBackground.centerYAnchor).isActive = true
-        
+        imgViewPet.image = UIImage(data: pet.imgData)
     }
     
     // MARK: addLabels
@@ -116,7 +118,7 @@ class InfoView: UIScrollView {
         let lblName     = CustomLabel(text: "Nome: \(pet.nome)",                   fontSize: fontSize)
         let lblBreed    = CustomLabel(text: "Raça: \(pet.raca)",                  fontSize: fontSize)
         let lblGender   = CustomLabel(text: "Sexo: \(pet.sexo)",                 fontSize: fontSize)
-        let lblBirth    = CustomLabel(text: "Data de nascimento: \(information.birth)",    fontSize: fontSize)
+        let lblBirth    = CustomLabel(text: "Data de nascimento: \(pet.dia)/\(pet.mes)/\(pet.ano)",    fontSize: fontSize)
         let lblColor    = CustomLabel(text: "Cor: \(pet.cor)",                   fontSize: fontSize)
         let lblWeight   = CustomLabel(text: "Peso: \(pet.peso)",                 fontSize: fontSize)
         let lblMoreInfo = CustomLabel(text: "Outras informações: \(pet.outros)", fontSize: fontSize)
