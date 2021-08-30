@@ -24,7 +24,7 @@
 		10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC326D55FF30084051E /* InfoViewController.swift */; };
 		10CB7DC626D560080084051E /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC526D560080084051E /* InfoView.swift */; };
 		10CB7DC826D5783B0084051E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB7DC726D5783B0084051E /* CustomLabel.swift */; };
-		10D881F326D818DB0008757B /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D881F226D818DB0008757B /* ValidationService.swift */; };
+		10D881F326D818DB0008757B /* ValidationFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D881F226D818DB0008757B /* ValidationFunctions.swift */; };
 		D3BD23FD26D95A2E005165F6 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD23FC26D95A2E005165F6 /* EditViewController.swift */; };
 		D3BD240026D95AAC005165F6 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD23FF26D95AAC005165F6 /* EditView.swift */; };
 		D3BD240226D95AD7005165F6 /* EditLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BD240126D95AD7005165F6 /* EditLabel.swift */; };
@@ -73,7 +73,7 @@
 		10CB7DC326D55FF30084051E /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		10CB7DC526D560080084051E /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		10CB7DC726D5783B0084051E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		10D881F226D818DB0008757B /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		10D881F226D818DB0008757B /* ValidationFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFunctions.swift; sourceTree = "<group>"; };
 		D3BD23FC26D95A2E005165F6 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		D3BD23FF26D95AAC005165F6 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		D3BD240126D95AD7005165F6 /* EditLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLabel.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				02293CDD26D4023600AA282D /* LaunchScreen.storyboard */,
 				02293CE026D4023600AA282D /* Info.plist */,
 				02293CD826D4023400AA282D /* Nano0821.xcdatamodeld */,
-				10D881F226D818DB0008757B /* ValidationService.swift */,
+				10D881F226D818DB0008757B /* ValidationFunctions.swift */,
 				0212194126D9626100E633D3 /* Model */,
 				025A90C626D44FC10068EAFF /* Scenes */,
 				025A90C426D44F9C0068EAFF /* View */,
@@ -358,7 +358,7 @@
 				10CB7DC626D560080084051E /* InfoView.swift in Sources */,
 				D3BD240626D95B0A005165F6 /* EditPetIcon.swift in Sources */,
 				D3BD240026D95AAC005165F6 /* EditView.swift in Sources */,
-				10D881F326D818DB0008757B /* ValidationService.swift in Sources */,
+				10D881F326D818DB0008757B /* ValidationFunctions.swift in Sources */,
 				10CB7DC426D55FF30084051E /* InfoViewController.swift in Sources */,
 				D3BD23FD26D95A2E005165F6 /* EditViewController.swift in Sources */,
 			);

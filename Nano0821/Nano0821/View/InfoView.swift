@@ -8,17 +8,6 @@
 import UIKit
 import CoreData
 
-struct Animal {
-    let species: String
-    let name: String
-    let breed: String
-    let gender: String
-    let birth: String
-    let color: String
-    let weight: String
-    let moreInfo: String
-}
-
 class InfoView: UIScrollView {
     
     // MARK: variáveis e constantes
@@ -26,8 +15,6 @@ class InfoView: UIScrollView {
     let imgViewBackground = UIImageView()
     let coreData = petCoreData()
     var searchId = Int()
-    
-    let information = Animal(species: "Canina", name: "Nico", breed: "Pinscher", gender: "Macho", birth: "12/12/2014",color: "Marrom",weight: "3,8", moreInfo: "pi pi pi po po po bla bla bla coisa linda da mãe. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
     
     // MARK: init
     init(frame: CGRect, idPet: Int) {
@@ -114,14 +101,14 @@ class InfoView: UIScrollView {
         
         let pet: Pet = loadPet()
         
-        let lblSpecies  = CustomLabel(text: "Espécie: \(pet.especie)",             fontSize: fontSize)
-        let lblName     = CustomLabel(text: "Nome: \(pet.nome)",                   fontSize: fontSize)
-        let lblBreed    = CustomLabel(text: "Raça: \(pet.raca)",                  fontSize: fontSize)
-        let lblGender   = CustomLabel(text: "Sexo: \(pet.sexo)",                 fontSize: fontSize)
-        let lblBirth    = CustomLabel(text: "Data de nascimento: \(pet.dia)/\(pet.mes)/\(pet.ano)",    fontSize: fontSize)
-        let lblColor    = CustomLabel(text: "Cor: \(pet.cor)",                   fontSize: fontSize)
-        let lblWeight   = CustomLabel(text: "Peso: \(pet.peso)",                 fontSize: fontSize)
-        let lblMoreInfo = CustomLabel(text: "Outras informações: \(pet.outros)", fontSize: fontSize)
+        let lblSpecies  = CustomLabel(text: "Espécie: \(pet.especie)",                              fontSize: fontSize)
+        let lblName     = CustomLabel(text: "Nome: \(pet.nome)",                                    fontSize: fontSize)
+        let lblBreed    = CustomLabel(text: "Raça: \(pet.raca)",                                    fontSize: fontSize)
+        let lblGender   = CustomLabel(text: "Sexo: \(pet.sexo)",                                    fontSize: fontSize)
+        let lblBirth    = CustomLabel(text: "Data de nascimento: \(pet.dia)/\(pet.mes)/\(pet.ano)", fontSize: fontSize)
+        let lblColor    = CustomLabel(text: "Cor: \(pet.cor)",                                      fontSize: fontSize)
+        let lblWeight   = CustomLabel(text: "Peso: \(pet.peso)",                                    fontSize: fontSize)
+        let lblMoreInfo = CustomLabel(text: "Outras informações: \(pet.outros)",                    fontSize: fontSize)
         
         setupLabel(label: lblSpecies, constant: constraintConstant, isLast: false)
         constraintConstant += lblSpecies.frame.height + 40

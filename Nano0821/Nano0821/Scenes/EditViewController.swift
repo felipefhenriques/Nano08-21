@@ -15,7 +15,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     var petImage = UIImage()
     
     var alert = UIAlertController(title: "Mensagem", message: "msg", preferredStyle: .alert)
-    let validation = ValidationService()
+    let validation = ValidationFunctions()
     
     // MARK: loadView
     override func loadView() {
@@ -86,23 +86,23 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             let gender = try validation.validateEmpties(customView.fdGender.text)
             let color = try validation.validateEmpties(customView.fdColor.text)
             let weightS = try validation.validateEmpties(customView.fdWeight.text)
-            let other = try validation.validateEmpties(customView.fdMoreInfo.text)
+            let other = try validation.validateOtherInfo(customView.fdMoreInfo.text)
             
             // Validar se peso é um numero
             let weight = try validation.validateWeight(weightS)
             
             // Validar a data
             let dateTriple = try validation.validateDate(customView.fdDay.text, month: customView.fdMonth.text, year: customView.fdYear.text)
-            let dateS = "\(dateTriple.0)/\(dateTriple.1)/\(dateTriple.2)"
-            print(dateS)
+            
+            // Validar a imagem
+            let img = try validation.validateImg(petImage.pngData())
             
             // Se deu tudo certo
-            
             let petAdicionado = Pet(
-                index: 0, imgData: petImage.pngData()!, especie: species,
+                index: 0, imgData: img, especie: species,
                 nome: name, raca: breed,
                 sexo: gender, cor: color,
-                peso: weight, outros: other, dia: customView.fdDay.text!, mes: customView.fdMonth.text!, ano: customView.fdYear.text!)
+                peso: weight, outros: other, dia: dateTriple.0, mes: dateTriple.1, ano: dateTriple.2)
             coreData.savePet(entity: "PetEntity", pet: petAdicionado)
             
             self.navigationController?.popViewController(animated: true)
