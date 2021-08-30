@@ -160,5 +160,16 @@ class ValidationTests: XCTestCase {
         XCTAssertEqual(ValidationError.dayNotInMonth, error)
         XCTAssertEqual(ValidationError.dayNotInMonth.errorDescription, error?.errorDescription)
     }
+    
+    // MARK: Testes para .imgNotFound
+    func testImgIsInvalid() throws {
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try validation.validateImg(nil)) { thrownError in
+            error = thrownError as? ValidationError
+        }
+        XCTAssertEqual(ValidationError.imgNotFound, error)
+        XCTAssertEqual(ValidationError.imgNotFound.errorDescription, error?.errorDescription)
+    }
 
 }

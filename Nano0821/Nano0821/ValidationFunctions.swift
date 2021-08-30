@@ -5,7 +5,7 @@
 //  Created by Caroline Viana on 26/08/21.
 //
 
-import Foundation
+import UIKit
 
 struct ValidationFunctions {
     func validateDate(_ day: String?, month: String?, year: String?) throws -> (String, String, String) {
@@ -54,6 +54,18 @@ struct ValidationFunctions {
         if field == "" { throw ValidationError.invalidValue }
         return field
     }
+    
+    func validateOtherInfo(_ info: String?) throws -> String {
+        guard let field = info else { throw ValidationError.invalidValue }
+        if field == "" { return "Sem informações adicionais" }
+        return field
+    }
+    
+    func validateImg(_ img: Data?) throws -> Data {
+        guard let image = img else { throw ValidationError.imgNotFound }
+        return image
+    }
+    
 }
 
 enum ValidationError: LocalizedError {
@@ -64,24 +76,26 @@ enum ValidationError: LocalizedError {
     case isNotValidYear
     case weightIsNotValid
     case dayNotInMonth
-    
+    case imgNotFound
     
     var errorDescription: String? {
         switch self {
         case .invalidValue:
-            return "Esse é um valor inválido."//
+            return "Esse é um valor inválido."
         case .isNotInt:
-            return "Esse não é um valor inteiro."//
+            return "Esse não é um valor inteiro."
         case .isNotValidDay:
-            return "Esse não é um dia válido."//
+            return "Esse não é um dia válido."
         case .isNotValidMonth:
-            return "Esse não é um mês válido."//
+            return "Esse não é um mês válido."
         case .isNotValidYear:
-            return "Esse não é um ano válido."//
+            return "Esse não é um ano válido."
         case .weightIsNotValid:
-            return "Esse valor para peso não é valido."//
+            return "Esse valor para peso não é valido."
         case .dayNotInMonth:
-            return "Esse dia não existe nesse mês."//
+            return "Esse dia não existe nesse mês."
+        case .imgNotFound:
+            return "Você não incluiu uma imagem, ou a sua imagem tem um formato não suportado."
         }
     }
 }
