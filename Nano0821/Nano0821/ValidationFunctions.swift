@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ValidationService {
+struct ValidationFunctions {
     func validateDate(_ day: String?, month: String?, year: String?) throws -> (String, String, String) {
         // Valores inválidos
         guard var dayV = day else { throw ValidationError.invalidValue }

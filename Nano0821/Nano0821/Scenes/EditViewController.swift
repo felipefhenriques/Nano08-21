@@ -14,7 +14,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
     let coreData = petCoreData()
     
     var alert = UIAlertController(title: "Mensagem", message: "msg", preferredStyle: .alert)
-    let validation = ValidationService()
+    let validation = ValidationFunctions()
     
     // MARK: loadView
     override func loadView() {
@@ -85,7 +85,7 @@ class EditViewController: UIViewController, UITextFieldDelegate {
             let gender = try validation.validateEmpties(customView.fdGender.text)
             let color = try validation.validateEmpties(customView.fdColor.text)
             let weightS = try validation.validateEmpties(customView.fdWeight.text)
-            let other = try validation.validateEmpties(customView.fdMoreInfo.text)
+            let other = customView.fdMoreInfo.text ?? "Sem informações"
             
             // Validar se peso é um numero
             let weight = try validation.validateWeight(weightS)
