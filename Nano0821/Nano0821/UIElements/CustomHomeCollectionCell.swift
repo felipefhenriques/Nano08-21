@@ -12,9 +12,16 @@ class petCollectionCell: UICollectionViewCell {
     
     var coreData = petCoreData()
     var petsArray: [Pet] = []
-    
-    var petImage = UIImageView()
+    var petImage: UIImageView = {
+        let uiview = UIImageView(frame: .zero)
+        uiview.contentMode = .scaleToFill
+        uiview.translatesAutoresizingMaskIntoConstraints = false
+        uiview.layer.masksToBounds = true
+        uiview.layer.cornerRadius = 30
+        return uiview
+    }()
     var plusImage = UIImageView()
+    
     var labelNome: UILabel = {
         var label = UILabel()
 //        label.font = UIFont(name: "Avenir-Next", size: 20)
@@ -44,6 +51,13 @@ class petCollectionCell: UICollectionViewCell {
     func loadCell(index: Int){
         self.backgroundColor = #colorLiteral(red: 0.9999071956, green: 1, blue: 0.999881804, alpha: 1)
         
+        //setup
+        let imgPet = UIImage(data: petsArray[index].imgData)
+        petImage.image = imgPet
+        
+        //View hierarchy
+        self.addSubview(petImage)
+        petImageConstraints()
         self.addSubview(labelNome)
         labelNomeConstraints()
         
@@ -77,6 +91,13 @@ class petCollectionCell: UICollectionViewCell {
             plusImage.widthAnchor.constraint(equalToConstant: 100),
             plusImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             plusImage.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+    
+    func petImageConstraints(){
+        NSLayoutConstraint.activate([
+            petImage.heightAnchor.constraint(equalTo: self.heightAnchor),
+            petImage.widthAnchor.constraint(equalTo: self.widthAnchor)
         ])
     }
     
